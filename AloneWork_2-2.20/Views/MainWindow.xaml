@@ -7,9 +7,9 @@
         xmlns:vm="clr-namespace:AloneWork_2_2._20.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="250" MinHeight="450" MinWidth ="250">
-    <!--<Window.DataContext>
+    <Window.DataContext>
         <vm:MainWindowViewModel/>
-    </Window.DataContext>-->
+    </Window.DataContext>
     
     <Window.Resources>
         <Style TargetType="Button">
@@ -29,8 +29,7 @@
             <Setter Property="Width" Value="Auto"/>
             <Setter Property="Margin" Value="2"/>
             <Setter Property="Padding" Value="4"/>
-            <Setter Property="CornerRadius" Value="10"/>
-            
+            <Setter Property="CornerRadius" Value="10"/>            
         </Style>
     </Window.Resources>
     <Grid Background="#FF161616">
@@ -81,86 +80,100 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                    <Border Grid.Column="0" Grid.Row="0">
+                    <Border Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
                         <Button 
-                        Content="AC"/>
+                            Content="AC"
+                            Command="{Binding Path=AddCommandClear}"/>
                     </Border>
-                    <Border Grid.Column="1" Grid.Row="0">
-                        <Button
-                        Content="+/-"/>
-                    </Border>
+                    
                     <Border Grid.Column="2" Grid.Row="0">
                         <Button
-                        Content="%"/>
+                            Content="+/-"
+                            Command="{Binding Path=AddCommand}"/>
                     </Border>
                     <Border Grid.Column="3" Grid.Row="0" Background="#FFFD9427">
                         <Button
-                        Content="/"
-                        Background="#FFFD9427"/>
+                            Content="/"
+                            Background="#FFFD9427"
+                            Command="{Binding Path=AddCommand}"/>
                     </Border>
 
                     <Border Grid.Column="0" Grid.Row="1">
                     <Button
-                        Content="7"/>
+                        Content="7"
+                        Command="{Binding Path=AddCommand}"/>
                 </Border>
                 <Border Grid.Column="1" Grid.Row="1">
                         <Button
-                        Content="8"/>
+                            Content="8"
+                            Command="{Binding Path=AddCommand}"/>
                 </Border>
                     <Border Grid.Column="2" Grid.Row="1">
                         <Button 
-                        Content="9"/>
+                            Content="9"
+                            Command="{Binding Path=AddCommand}"/>
                 </Border>
                 <Border Grid.Column="3" Grid.Row="1" Background="#FFFD9427">
                         <Button 
-                        Content="X"
-                        Background="#FFFD9427"/>
+                            Content="X"
+                            Background="#FFFD9427"
+                            Command="{Binding Path=AddCommand}"/>
                 </Border>
 
                     <Border Grid.Column="0" Grid.Row="2">
                         <Button 
-                        Content="4"/>
+                            Content="4"
+                            Command="{Binding Path=AddCommand}"/>
                     </Border>
                     <Border Grid.Column="1" Grid.Row="2">
                         <Button 
-                        Content="5"/>
+                            Content="5"
+                            Command="{Binding Path=AddCommand}"/>
                     </Border>
                     <Border Grid.Column="2" Grid.Row="2">
                         <Button
-                        Content="6"/>
+                            Content="6"
+                            Command="{Binding Path=AddCommand}"/>
                     </Border>
                     <Border Grid.Column="3" Grid.Row="2" Background="#FFFD9427">
                         <Button
-                        Content="-"
-                        Background="#FFFD9427"/>
+                            Content="-"
+                            Background="#FFFD9427"
+                            Command="{Binding Path=AddCommand}"/>
                     </Border>
 
                     <Border Grid.Column="0" Grid.Row="3">
                         <Button
-                        Content="1"/>
+                            Content="1"
+                            Command="{Binding Path=AddCommand}"/>
                     </Border>
                     <Border Grid.Column="1" Grid.Row="3">
                         <Button
-                        Content="2"/>
+                            Content="2"
+                            Command="{Binding Path=AddCommand}"/>
                     </Border>
                     <Border Grid.Column="2" Grid.Row="3">
                         <Button
-                        Content="3"/>
+                            Content="3"
+                            Command="{Binding Path=AddCommand}"/>
                     </Border>
                     <Border Grid.Column="3" Grid.Row="3" Background="#FFFD9427">
                         <Button
-                        Content="+"
-                        Background="#FFFD9427"/>
+                            Content="+"
+                            Background="#FFFD9427"
+                            Command="{Binding Path=AddCommand}"/>
                     </Border>
 
                     <Border Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3">
                         <Button 
-                        Content="0"/>
+                            Content="0"
+                            Command="{Binding Path=AddCommand}"/>
                     </Border>
                     <Border Grid.Column="3" Grid.Row="4" Background="#FFFD9427">
                         <Button
-                        Content="="
-                        Background="#FFFD9427"/>
+                            Content="="
+                            Background="#FFFD9427"
+                            Command="{Binding Path=AddCommand}"/>
                     </Border>
             </Grid>
             </Border>

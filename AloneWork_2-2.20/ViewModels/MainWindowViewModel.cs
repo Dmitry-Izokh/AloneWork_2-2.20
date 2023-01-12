@@ -1,4 +1,4 @@
-﻿//using AloneWork_2_2._20.Models;
+﻿using AloneWork_2_2._20.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,44 +20,75 @@ namespace AloneWork_2_2._20.ViewModels
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
             }
 
-        //private double radius;
-        //public double Radius
-        //{
-        //    get => radius;
-        //    set
-        //    {
-        //        radius = value;
-        //        OnPropertyChaged();
-        //    }
-        //}
+        private double nomber1;
+        public double Nomber1
+        {
+            //Назначение первого числа:
+            //Array[i] a=new Array[];
+            //i=значение клика кнопки;
+            //nomber1 = Convert.ToDouble(a);
+            
+            get => nomber1;
+            set
+            {
+                nomber1 =value;
+                OnPropertyChaged();
+            }
+        }
 
-        //private double circumference;
-        //public double Сircumference
-        //{
-        //    get => circumference;
-        //    set
-        //    {
-        //        circumference = value;
-        //        OnPropertyChaged();
-        //    }
-        //}
+        private double nomber2;
+        public double Nomber2
+        {
+            get => nomber2;
+            set
+            {
+                nomber2 = value;
+                OnPropertyChaged();
+            }
+        }
 
-        public ICommand AddCommand { get; }
+        private double nomber3;
+        public double Nomber3
+        {
+            get => nomber3;
+            set
+            {
+                nomber3 = value;
+                OnPropertyChaged();
+            }
+        }        
+        //Включение AC
+        public ICommand AddCommandClear { get; }
         private void OnAddCommandExecute(object p)
         {
-            //Сircumference = CircumferenceСalculation.Сalculation(Radius);
-        }
+            Nomber3 = 0;
 
+        }
         private bool CanAddCommandExecuted(object p)
         {
-            //if (radius != 0)
+            //Если в поле есть какое-то значение то при нажатии AC команда сработает, если значение 0, то команда недействительна.
+            if (nomber1 != 0 || nomber2 != 0)
                 return true;
-            //else
-            //    return false;
+            else
+                return false;
         }
+
+        //Включение +/-
+        //public ICommand AddCommandSignReplacement { get; }
+        //private void OnAddCommandExecute(object p)
+        //{
+        //    Nomber3 = -Nomber3;
+        //}
+        //private bool CanAddCommandExecuted(object p)
+        //{
+        //   return true;
+            
+        //}
+
         public MainWindowViewModel()
             {
-                AddCommand = new RelayCommand(OnAddCommandExecute, CanAddCommandExecuted);
-            }
+            AddCommandClear = new RelayCommand(OnAddCommandExecute, CanAddCommandExecuted);
+            //AddCommandSignReplacement = new RelayCommand(OnAddCommandExecute, CanAddCommandExecuted);
+        }
         }
 }
