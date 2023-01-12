@@ -4,23 +4,28 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AloneWork_2_2._20"
+        xmlns:vm="clr-namespace:AloneWork_2_2._20.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="250" MinHeight="450" MinWidth ="250">
+    <!--<Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>-->
+    
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Padding" Value="5"/>
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontFamily" Value="Verdana"/>
-            <Setter Property="FontSize" Value="18"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="18"/>            
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Opacity" Value="100"/>
             <Setter Property="Foreground" Value="#FF161616"/>
             <Setter Property="BorderBrush" Value="White"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
         <Style TargetType="Border">
             <Setter Property="Background" Value="White"/>
-            <Setter Property="Height" Value="55"/>
+            <Setter Property="MinHeight" Value="55"/>
+            <Setter Property="Height" Value="Auto"/>
             <Setter Property="Width" Value="Auto"/>
             <Setter Property="Margin" Value="2"/>
             <Setter Property="Padding" Value="4"/>
@@ -37,7 +42,8 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Border 
-            Grid.Row="0" 
+            Grid.Row="0"
+            Padding="4"
             CornerRadius="10 10 0 0" 
             Background="#FFDADADA"
             Height="100"
@@ -55,6 +61,7 @@
         <StackPanel Grid.Row="1"  >
             <Border 
                 Background="#FFDADADA" 
+                Padding="4"
                 Margin="7 0 7 7" 
                 CornerRadius="0 0 10 10"
                 Height="Auto">
@@ -75,119 +82,83 @@
                 </Grid.RowDefinitions>
 
                     <Border Grid.Column="0" Grid.Row="0">
-                        <Button  
-                        Height="auto" 
-                        Width="auto"
+                        <Button 
                         Content="AC"/>
                     </Border>
                     <Border Grid.Column="1" Grid.Row="0">
-                        <Button  
-                        Height="auto" 
-                        Width="auto"
+                        <Button
                         Content="+/-"/>
                     </Border>
                     <Border Grid.Column="2" Grid.Row="0">
-                        <Button  
-                        Height="auto" 
-                        Width="auto"
+                        <Button
                         Content="%"/>
                     </Border>
                     <Border Grid.Column="3" Grid.Row="0" Background="#FFFD9427">
-                        <Button  
-                        Height="auto" 
-                        Width="auto"
+                        <Button
                         Content="/"
                         Background="#FFFD9427"/>
                     </Border>
 
                     <Border Grid.Column="0" Grid.Row="1">
-                    <Button  
-                        Height="auto" 
-                        Width="auto"
+                    <Button
                         Content="7"/>
                 </Border>
                 <Border Grid.Column="1" Grid.Row="1">
-                        <Button  
-                        Height="auto" 
-                        Width="auto"
+                        <Button
                         Content="8"/>
                 </Border>
                     <Border Grid.Column="2" Grid.Row="1">
-                        <Button  
-                        Height="auto" 
-                        Width="auto"
+                        <Button 
                         Content="9"/>
                 </Border>
                 <Border Grid.Column="3" Grid.Row="1" Background="#FFFD9427">
-                        <Button  
-                        Height="auto" 
-                        Width="auto"
+                        <Button 
                         Content="X"
                         Background="#FFFD9427"/>
                 </Border>
 
                     <Border Grid.Column="0" Grid.Row="2">
-                        <Button  
-                        Height="auto" 
-                        Width="auto"
+                        <Button 
                         Content="4"/>
                     </Border>
                     <Border Grid.Column="1" Grid.Row="2">
-                        <Button  
-                        Height="auto" 
-                        Width="auto"
+                        <Button 
                         Content="5"/>
                     </Border>
                     <Border Grid.Column="2" Grid.Row="2">
-                        <Button  
-                        Height="auto" 
-                        Width="auto"
+                        <Button
                         Content="6"/>
                     </Border>
                     <Border Grid.Column="3" Grid.Row="2" Background="#FFFD9427">
-                        <Button  
-                        Height="auto" 
-                        Width="auto"
+                        <Button
                         Content="-"
                         Background="#FFFD9427"/>
                     </Border>
 
                     <Border Grid.Column="0" Grid.Row="3">
-                        <Button  
-                        Height="auto" 
-                        Width="auto"
+                        <Button
                         Content="1"/>
                     </Border>
                     <Border Grid.Column="1" Grid.Row="3">
-                        <Button  
-                        Height="auto" 
-                        Width="auto"
+                        <Button
                         Content="2"/>
                     </Border>
                     <Border Grid.Column="2" Grid.Row="3">
-                        <Button  
-                        Height="auto" 
-                        Width="auto"
+                        <Button
                         Content="3"/>
                     </Border>
                     <Border Grid.Column="3" Grid.Row="3" Background="#FFFD9427">
-                        <Button  
-                        Height="auto" 
-                        Width="auto"
+                        <Button
                         Content="+"
                         Background="#FFFD9427"/>
                     </Border>
 
                     <Border Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3">
-                        <Button  
-                        Height="auto" 
-                        Width="auto"
+                        <Button 
                         Content="0"/>
                     </Border>
                     <Border Grid.Column="3" Grid.Row="4" Background="#FFFD9427">
-                        <Button  
-                        Height="auto" 
-                        Width="auto"
+                        <Button
                         Content="="
                         Background="#FFFD9427"/>
                     </Border>
