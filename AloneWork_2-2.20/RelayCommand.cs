@@ -25,7 +25,6 @@ namespace AloneWork_2_2._20
         }
 
         public bool CanExecute(object parameter) => canExecute?.Invoke(parameter) ?? true;
-
         public void Execute(object parameter) => execute(parameter);
     }
 }

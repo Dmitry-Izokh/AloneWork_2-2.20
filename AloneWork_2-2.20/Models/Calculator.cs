@@ -1,55 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace AloneWork_2_2._20.Models
 {
-    static class Calculator
+    class Calculation
     {
-        //public static int Clear(int c)
-        //{
-        //   return 0;
-        //}
-
-        public static int SignReplacement(int a)
+        public static string GetResult(string str)
         {
-            if (a > 0 || a<0)
-                return -a;
-            else
-                return 0;            
-        }
+            //создаем экземпляр класса DataTable
 
-        public static int Division(int a, int b)
-        {
-            double A = Convert.ToDouble(a);
-            double B = Convert.ToDouble(b);
-            double c = A / B;
-            return (int)c;
-        }
+            return new DataTable().Compute(str, null).ToString();
 
-        public static int Multiplication(int a, int b)
-        {
-            int c = a * b;
-            return c;
-        }
-
-        public static int Subtraction(int a, int b)
-        {
-            int c = a - b;
-            return c;
-        }
-
-        public static int Addition(int a, int b)
-        {
-            int c = a + b;
-            return c;
-        }
-
-        internal static object Clear(double nomber3)
-        {
-            throw new NotImplementedException();
         }
     }
 }

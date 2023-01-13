@@ -6,20 +6,18 @@
         xmlns:local="clr-namespace:AloneWork_2_2._20"
         xmlns:vm="clr-namespace:AloneWork_2_2._20.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="250" MinHeight="450" MinWidth ="250">
+        Title="MainWindow" Height="500" Width="270">
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
-    
+
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Padding" Value="5"/>
             <Setter Property="FontFamily" Value="Verdana"/>
-            <Setter Property="FontSize" Value="18"/>            
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="Opacity" Value="100"/>
+            <Setter Property="FontSize" Value="18"/>
             <Setter Property="Foreground" Value="#FF161616"/>
-            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="Background" Value="White"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
         <Style TargetType="Border">
@@ -29,63 +27,70 @@
             <Setter Property="Width" Value="Auto"/>
             <Setter Property="Margin" Value="2"/>
             <Setter Property="Padding" Value="4"/>
-            <Setter Property="CornerRadius" Value="10"/>            
+            <Setter Property="CornerRadius" Value="10"/>
         </Style>
     </Window.Resources>
-    <Grid Background="#FF161616">
-        <Grid.ColumnDefinitions>            
+
+    <Grid 
+        Background="#FF161616"
+        Height="Auto">
+        <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Border 
             Grid.Row="0"
-            Padding="4"
+            Padding="10 10 0 0"
             CornerRadius="10 10 0 0" 
             Background="#FFDADADA"
             Height="100"
-            Margin="7 7 7 0">
-            <TextBox             
-                Height="auto"
-                VerticalAlignment="Bottom"
+            Margin="7 7 7 0"
+            BorderThickness="0"
+            VerticalAlignment="Bottom">
+            <TextBlock                
                 FontFamily="Verdana"
                 FontSize="36"
-                Text="2548"
                 TextAlignment="Right"
                 Padding="7 7 7 7"
-                Background="#FFDADADA"/>
+                Margin="0 0 0 10"
+                Height="50"
+                VerticalAlignment="Bottom"
+                Background="#FFDADADA"                
+                Text="{Binding Text}"/>
         </Border>
-        <StackPanel Grid.Row="1"  >
+        <StackPanel
+            Grid.Row="1">
             <Border 
                 Background="#FFDADADA" 
                 Padding="4"
                 Margin="7 0 7 7" 
-                CornerRadius="0 0 10 10"
-                Height="Auto">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
+                CornerRadius="0 0 10 10"                
+                BorderThickness="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
 
                     <Border Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
                         <Button 
-                            Content="AC"
-                            Command="{Binding Path=AddCommandClear}"/>
+                            Content="AC"                            
+                            Command="{Binding Path=Command_Clear}"/>
                     </Border>
-                    
+
                     <Border Grid.Column="2" Grid.Row="0">
                         <Button
                             Content="+/-"
@@ -95,89 +100,89 @@
                         <Button
                             Content="/"
                             Background="#FFFD9427"
-                            Command="{Binding Path=AddCommand}"/>
+                            Command="{Binding Path=OnCommand_But_Div}"/>
                     </Border>
 
                     <Border Grid.Column="0" Grid.Row="1">
-                    <Button
+                        <Button
                         Content="7"
-                        Command="{Binding Path=AddCommand}"/>
-                </Border>
-                <Border Grid.Column="1" Grid.Row="1">
+                        Command="{Binding Path=OnCommand_But_7}"/>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="1">
                         <Button
                             Content="8"
-                            Command="{Binding Path=AddCommand}"/>
-                </Border>
+                            Command="{Binding Path=OnCommand_But_8}"/>
+                    </Border>
                     <Border Grid.Column="2" Grid.Row="1">
                         <Button 
                             Content="9"
-                            Command="{Binding Path=AddCommand}"/>
-                </Border>
-                <Border Grid.Column="3" Grid.Row="1" Background="#FFFD9427">
+                            Command="{Binding Path=OnCommand_But_9}"/>
+                    </Border>
+                    <Border Grid.Column="3" Grid.Row="1" Background="#FFFD9427">
                         <Button 
                             Content="X"
                             Background="#FFFD9427"
-                            Command="{Binding Path=AddCommand}"/>
-                </Border>
+                            Command="{Binding Path=OnCommand_But_Mult}"/>
+                    </Border>
 
                     <Border Grid.Column="0" Grid.Row="2">
                         <Button 
                             Content="4"
-                            Command="{Binding Path=AddCommand}"/>
+                            Command="{Binding Path=OnCommand_But_4}"/>
                     </Border>
                     <Border Grid.Column="1" Grid.Row="2">
                         <Button 
                             Content="5"
-                            Command="{Binding Path=AddCommand}"/>
+                            Command="{Binding Path=OnCommand_But_5}"/>
                     </Border>
                     <Border Grid.Column="2" Grid.Row="2">
                         <Button
                             Content="6"
-                            Command="{Binding Path=AddCommand}"/>
+                            Command="{Binding Path=OnCommand_But_6}"/>
                     </Border>
                     <Border Grid.Column="3" Grid.Row="2" Background="#FFFD9427">
                         <Button
                             Content="-"
                             Background="#FFFD9427"
-                            Command="{Binding Path=AddCommand}"/>
+                            Command="{Binding Path=OnCommand_But_Minus}"/>
                     </Border>
 
                     <Border Grid.Column="0" Grid.Row="3">
                         <Button
                             Content="1"
-                            Command="{Binding Path=AddCommand}"/>
+                            Command="{Binding Path=OnCommand_But_1}"/>
                     </Border>
                     <Border Grid.Column="1" Grid.Row="3">
                         <Button
                             Content="2"
-                            Command="{Binding Path=AddCommand}"/>
+                            Command="{Binding Path=OnCommand_But_2}"/>
                     </Border>
                     <Border Grid.Column="2" Grid.Row="3">
                         <Button
                             Content="3"
-                            Command="{Binding Path=AddCommand}"/>
+                            Command="{Binding Path=OnCommand_But_3}"/>
                     </Border>
                     <Border Grid.Column="3" Grid.Row="3" Background="#FFFD9427">
                         <Button
                             Content="+"
                             Background="#FFFD9427"
-                            Command="{Binding Path=AddCommand}"/>
+                            Command="{Binding Path=OnCommand_But_Plus}"/>
                     </Border>
 
                     <Border Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3">
                         <Button 
                             Content="0"
-                            Command="{Binding Path=AddCommand}"/>
+                            Command="{Binding Path=OnCommand_But_0}"/>
                     </Border>
                     <Border Grid.Column="3" Grid.Row="4" Background="#FFFD9427">
                         <Button
                             Content="="
                             Background="#FFFD9427"
-                            Command="{Binding Path=AddCommand}"/>
+                            Command="{Binding Path=Command_Result}"/>
                     </Border>
-            </Grid>
+                </Grid>
             </Border>
         </StackPanel>
-        
+
     </Grid>
 </Window>
